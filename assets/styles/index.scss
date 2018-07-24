@@ -1,0 +1,15 @@
+$icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
+@import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+body {
+  margin: 0px auto;
+  max-width: 700px;
+//   // margin-left: 00px;
+
+// background-color: turquoise;
+}
+h1 {
+  color: pink;
+  margin: 0px auto;
+  text-align: center;
+}
