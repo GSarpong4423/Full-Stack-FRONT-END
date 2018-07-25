@@ -16,6 +16,5 @@ const addHandlers =() => {
 }
 
 module.exports = {
-  onCreateRecipe,
   addHandlers
 }

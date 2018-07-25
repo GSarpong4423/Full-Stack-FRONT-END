@@ -5,7 +5,7 @@ const store = require('../store.js')
 const signUpSuccess = function (data) {
   $('#message').text('Signed up successfully')
   $('#message').css('background-color', 'green')
-  $('#sign-up-modal').modal('hide')
+  $('#get_all').modal('hide')
   console.log('signUpSuccess ran. Data is :', data)
 }
 
@@ -23,6 +23,8 @@ const signInSuccess = function (data) {
   $('#signIn').addClass('hidden')
   $('#signUp').addClass('hidden')
   $('#sign-in-modal').modal('hide')
+  $('#get_all').removeClass('hidden')
+
   console.log('signInSuccess ran. Data is :', data)
   store.user = data.user
 }

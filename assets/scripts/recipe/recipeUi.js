@@ -9,13 +9,13 @@ const onCreateRecipeSuccess = function (data) {
   console.log('onCreateSuccess ran. Data is :', data)
 }
 
-  const onCreateRecipeFailure = function (error) {
-    $('#message').text('Error on sign in')
-    $('#message').css('background-color', 'red')
-    console.log('signInFailure ran. Error is :', error)
-  }
+const onCreateRecipeFailure = function (error) {
+  $('#message').text('Error on sign in')
+  $('#message').css('background-color', 'red')
+  console.log('signInFailure ran. Error is :', error)
+}
 
-  module.exports = {
-    onCreateRecipeSuccess,
-    onCreateRecipeFailure
-  }
+module.exports = {
+  onCreateRecipeSuccess,
+  onCreateRecipeFailure
+}
