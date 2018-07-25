@@ -11,3 +11,9 @@ const createRecipe = function (data) {
       Authorization: 'Token token=' + store.user.token
     },
     data
+  })
+}
+
+module.exports = {
+  createRecipe
+}

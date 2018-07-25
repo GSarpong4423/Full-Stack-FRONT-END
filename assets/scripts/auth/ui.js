@@ -5,6 +5,7 @@ const store = require('../store.js')
 const signUpSuccess = function (data) {
   $('#message').text('Signed up successfully')
   $('#message').css('background-color', 'green')
+  $('#sign-up-modal').modal('hide')
   console.log('signUpSuccess ran. Data is :', data)
 }
 
@@ -21,6 +22,7 @@ const signInSuccess = function (data) {
   $('#changePassword').removeClass('hidden')
   $('#signIn').addClass('hidden')
   $('#signUp').addClass('hidden')
+  $('#sign-in-modal').modal('hide')
   console.log('signInSuccess ran. Data is :', data)
   store.user = data.user
 }
@@ -34,6 +36,7 @@ const signInFailure = function (error) {
 const changePasswordSuccess = function (data) {
   $('#message').text('Signed in successfully')
   $('#message').css('background-color', 'green')
+  $('#change-password-modal').modal('hide')
   console.log('changePasswordSuccess ran. Data is :', data)
   store.user = data.user
 }
@@ -51,6 +54,7 @@ const signOutSuccess = function () {
   $('#changePassword').addClass('hidden')
   $('#signUp').removeClass('hidden')
   $('#signIn').removeClass('hidden')
+  $('#sign-out-modal').modal('hide')
   store.user = null
 }
 
