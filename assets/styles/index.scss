@@ -4,12 +4,22 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 body {
   margin: 0px auto;
   max-width: 700px;
+  font-family: 'Lobster', cursive;
+  color: rgb(9, 155, 9);
 //   // margin-left: 00px;
-
-// background-color: turquoise;
 }
 h1 {
-  color: pink;
+  color: rgb(9, 155, 9);
   margin: 0px auto;
   text-align: center;
+  font-family: 'Lobster', cursive;
+  text-shadow: -1px -1px 0 rgb(31, 155, 35),
+        3px -3px 0 rgb(0, 0, 0),
+        -3px 3px 0 rgb(23, 189, 42),
+        3px 3px 0 #000;
+  font-size: 80px;
 }
+.hidden {
+  display: none;
+}
+

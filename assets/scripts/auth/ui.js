@@ -17,6 +17,10 @@ const signUpFailure = function (error) {
 const signInSuccess = function (data) {
   $('#message').text('Signed in successfully')
   $('#message').css('background-color', 'green')
+  $('#signOut').removeClass('hidden')
+  $('#changePassword').removeClass('hidden')
+  $('#signIn').addClass('hidden')
+  $('#signUp').addClass('hidden')
   console.log('signInSuccess ran. Data is :', data)
   store.user = data.user
 }
@@ -43,6 +47,10 @@ const signOutSuccess = function () {
   $('#message').text('Signed out successfully')
   $('#message').css('background-color', 'green')
   console.log('signOutSuccess ran and nothing was returned!')
+  $('#signOut').addClass('hidden')
+  $('#changePassword').addClass('hidden')
+  $('#signUp').removeClass('hidden')
+  $('#signIn').removeClass('hidden')
   store.user = null
 }
 
