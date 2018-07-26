@@ -6,6 +6,7 @@ const signUpSuccess = function (data) {
   $('#message').text('Signed up successfully')
   $('#message').css('background-color', 'green')
   $('#get_all').modal('hide')
+  $('#update_recipe').modal('hide')
   console.log('signUpSuccess ran. Data is :', data)
 }
 
@@ -24,6 +25,7 @@ const signInSuccess = function (data) {
   $('#signUp').addClass('hidden')
   $('#sign-in-modal').modal('hide')
   $('#get_all').removeClass('hidden')
+  $('#delete_recipe').removeClass('hidden')
 
   console.log('signInSuccess ran. Data is :', data)
   store.user = data.user
@@ -57,6 +59,8 @@ const signOutSuccess = function () {
   $('#signUp').removeClass('hidden')
   $('#signIn').removeClass('hidden')
   $('#sign-out-modal').modal('hide')
+  $('#get_all').modal('hide')
+  $('#delete_recipe').modal('hide')
   store.user = null
 }
 
