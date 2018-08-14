@@ -15,6 +15,7 @@ const createRecipe = function (data) {
 }
 
 const showRecipe = function () {
+  console.log('Show my GET')
   return $.ajax({
     url: config.apiUrl + '/recipes/',
     method: 'GET',
@@ -24,17 +25,21 @@ const showRecipe = function () {
   })
 }
 
-const updateRecipe = function () {
+const updateRecipe = function (data) {
+  console.log('hi')
+  console.log('data after hi ', data)
   return $.ajax({
-    url: config.apiUrl + '/recipes/' + id,
+    // url: config.apiOrigin + '/recipes/' + data.recipe.id,
+    url: config.apiUrl + '/recipes/' + data.recipe.id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
-    }
+    },
+    data
   })
 }
 
-const deleteRecipe = function () {
+const deleteRecipe = function (id) {
   return $.ajax({
     url: config.apiUrl + '/recipes/' + id,
     method: 'DELETE',

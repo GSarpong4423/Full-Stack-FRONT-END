@@ -10,6 +10,8 @@ const recipeEvents = require('./recipe/recipeEvents.js')
 $(() => {
   authEvents.addHandlers1()
   recipeEvents.addHandlers()
+  $('#recipe-update').hide()
+  $('#recipe-delete').hide()
 
 
 //this is how you invoke a function which in this case is a handler

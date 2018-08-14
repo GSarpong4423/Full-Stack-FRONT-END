@@ -1,3 +1,5 @@
+'Use strict'
+
 const getFormFields = require('../../../lib/get-form-fields')
 
 const recipeApi = require('./recipeApi')
@@ -7,30 +9,40 @@ const onCreateRecipe = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   recipeApi.createRecipe(data)
-    .then(recipeUi.signUpSuccess)
-    .catch(recipeUi.signUpFailure)
+    .then(recipeUi.onCreateRecipeSuccess)
+    .catch(recipeUi.onCreateRecipeFailure)
 }
 
 const onShowRecipe = function (event) {
   event.preventDefault()
+  console.log('got on show recipes')
   recipeApi.showRecipe()
-    .then(recipeUi.showGamesSucess)
-    .catch(recipeUi.showGamesFailure)
+    .then(recipeUi.onShowRecipeSuccess)
+    .catch(recipeUi.onShowRecipeFailure)
 }
 
 const onUpdateRecipe = (event) => {
   event.preventDefault()
   const data = getFormFields(event.target)
-  proposalApi.updateProposal(data)
-    .then(proposalUi.updateProposalSuccess)
-    .catch(proposalUi.failure)
+  console.log('data is ' + data)
+  recipeApi.updateRecipe(data)
+    .then(recipeUi.onUpdateRecipeSuccess)
+    .catch(recipeUi.onUpdateRecipefailure)
+}
+const onDeleteRecipe = (event) => {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  const recipe = data.recipe
+  recipeApi.deleteRecipe(recipe.id)
+    .then(recipeUi.onDeleteRecipeSuccess)
+    .catch(recipeUi.onDeleteRecipeFailure)
 }
 
 const addHandlers =() => {
   $('#build_recipe').on('submit', onCreateRecipe)
   $('#recipe-search').on('submit', onShowRecipe)
-  $('#update_recipe').on('submit', onShowRecipe)
-
+  $('#recipe-update').on('submit', onUpdateRecipe)
+  $('#recipe-delete').on('submit', onDeleteRecipe)
 }
 
 module.exports = {

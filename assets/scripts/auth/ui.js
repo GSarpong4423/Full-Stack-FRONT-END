@@ -25,7 +25,11 @@ const signInSuccess = function (data) {
   $('#signUp').addClass('hidden')
   $('#sign-in-modal').modal('hide')
   $('#get_all').removeClass('hidden')
-  $('#delete_recipe').removeClass('hidden')
+  $('#recipe_delete').removeClass('hidden')
+  $('#recipe_update').removeClass('hidden')
+  $('#all_content').css('display', 'inline-block')
+  $('#recipe-update').show()
+  $('#recipe-delete').show()
 
   console.log('signInSuccess ran. Data is :', data)
   store.user = data.user

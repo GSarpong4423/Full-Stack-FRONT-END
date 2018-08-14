@@ -5,7 +5,7 @@ body {
   margin: 0px auto;
   max-width: 700px;
   font-family: 'Lobster', cursive;
-  color: rgb(9, 155, 9);
+  color: rgb(2, 43, 2);
 //   // margin-left: 00px;
 }
 h1 {
@@ -28,4 +28,10 @@ h1 {
   margin: 0px auto;
 
 }
+#all_content{
+  display: none;
+}
 
+#recipe-search {
+ color: rgb(3, 57, 3);
+}
