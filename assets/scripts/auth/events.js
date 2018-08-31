@@ -2,6 +2,7 @@ const getFormFields = require('../../../lib/get-form-fields')
 
 const api = require('./api')
 const ui = require('./ui')
+const store = require('../store.js')
 
 const onSignUp = function (event) {
   event.preventDefault()
@@ -11,6 +12,7 @@ const onSignUp = function (event) {
   api.signUp(data)
     .then(ui.signUpSuccess)
     .catch(ui.signUpFailure)
+  $("#sign-up")[0].reset()
 }
 
 const onSignIn = function (event) {
@@ -21,6 +23,7 @@ const onSignIn = function (event) {
   api.signIn(data)
     .then(ui.signInSuccess)
     .catch(ui.signInFailure)
+
 }
 const onChangePassword = function (event) {
   event.preventDefault()
@@ -37,10 +40,9 @@ const onSignOut = function (event) {
   console.log('sign out ran')
 
   const data = getFormFields(this)
-
-  api.changePassword(data)
+  api.signOut(data)
     .then(ui.signOutSuccess)
-    .catch(ui.changePasswordFailure)
+    .catch(ui.signOutFailure)
 }
 const onRecipe = function (event) {
   event.preventDefault()
@@ -56,6 +58,7 @@ const addHandlers1 = () => {
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
   $('#recipe').on('submit', onRecipe)
+  $('#sign-out').on('submit', onSignOut)
 }
 module.exports = {
   addHandlers1

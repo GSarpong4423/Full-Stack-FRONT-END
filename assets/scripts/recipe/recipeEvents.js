@@ -11,6 +11,7 @@ const onCreateRecipe = function (event) {
   recipeApi.createRecipe(data)
     .then(recipeUi.onCreateRecipeSuccess)
     .catch(recipeUi.onCreateRecipeFailure)
+    $("#build_recipe")[0].reset()
 }
 
 const onShowRecipe = function (event) {
